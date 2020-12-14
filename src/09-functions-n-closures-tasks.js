@@ -160,7 +160,7 @@ function retry(func, attempts) {
  *
  */
 function logger(func, logFunc) {
-  return function (...args) {
+  return function newFunction(...args) {
     const argsStr = [];
     args.forEach((item) => {
       if (Array.isArray(item)) {
@@ -199,7 +199,7 @@ function logger(func, logFunc) {
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
 function partialUsingArguments(fn, ...args1) {
-  return function (...args) {
+  return function newFunction(...args) {
     return fn(...args1, ...args);
   };
 }
